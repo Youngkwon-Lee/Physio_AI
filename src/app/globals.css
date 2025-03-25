@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 5%;
+  --foreground: 0 0% 98%;
+
+  --card: 0 0% 8%;
+  --card-foreground: 0 0% 98%;
+
+  --popover: 0 0% 8%;
+  --popover-foreground: 0 0% 98%;
+
+  --primary: 18 91% 55%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 0 0% 12%;
+  --secondary-foreground: 0 0% 98%;
+
+  --muted: 0 0% 12%;
+  --muted-foreground: 0 0% 64%;
+
+  --accent: 0 0% 12%;
+  --accent-foreground: 0 0% 98%;
+
+  --destructive: 0 63% 31%;
+  --destructive-foreground: 0 0% 98%;
+
+  --border: 0 0% 15%;
+  --input: 0 0% 15%;
+  --ring: 0 0% 83.9%;
+
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    @apply bg-background text-foreground;
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+  }
+  body {
+    @apply bg-background text-foreground min-h-screen;
+  }
+}
+
+.ochy-icon {
+  color: white;
+  stroke-width: 1.5;
+}
+
+.ochy-green {
+  color: #6bde54;
+}
+
+.ochy-timer {
+  color: #6bde54;
+  font-family: monospace;
+}
+
+.ochy-primary-button {
+  background-color: hsl(var(--primary));
+  color: white;
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+.ochy-primary-button:hover {
+  filter: brightness(1.1);
+}
+
+.ochy-secondary-button {
+  background-color: rgba(36, 36, 36, 0.8);
+  color: white;
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+.ochy-secondary-button:hover {
+  background-color: rgba(56, 56, 56, 0.8);
+}
+
+.dropzone {
+  border: 2px dashed rgba(128, 128, 128, 0.3);
+  border-radius: 8px;
+  background-color: rgba(36, 36, 36, 0.4);
+  transition: all 0.2s ease-in-out;
+}
+
+.dropzone:hover {
+  border-color: rgba(128, 128, 128, 0.7);
+  background-color: rgba(46, 46, 46, 0.7);
+}
+
+.dropzone-active {
+  border-color: hsl(var(--primary));
+  background-color: rgba(250, 91, 28, 0.1);
+}
+
+.analysis-card {
+  background-color: rgba(51, 30, 20, 0.6);
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.analysis-card:hover {
+  background-color: rgba(71, 40, 20, 0.6);
+}
+
+.result-card {
+  background-color: rgba(23, 23, 23, 0.6);
+  border-radius: 8px;
+}
+
+.good-score {
+  background-color: rgba(107, 222, 84, 0.8);
+  color: #0d0d0d;
+}
+
+.okay-score {
+  background-color: rgba(222, 176, 20, 0.8);
+  color: #0d0d0d;
+}
+
+.tab-button {
+  background-color: rgba(36, 36, 36, 0.4);
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+  border-bottom: 2px solid transparent;
+}
+
+.tab-button-active {
+  border-bottom: 2px solid hsl(var(--primary));
+}
