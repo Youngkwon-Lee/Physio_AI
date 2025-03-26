@@ -262,8 +262,30 @@ export default function UploadVideoPage() {
               <div className="bg-gray-50 rounded-xl p-6 space-y-4">
                 <h2 className="text-lg font-medium text-gray-900">파일 업로드</h2>
                 <div className="aspect-video flex items-center">
-                  <FileUpload onFileSelected={(file) => console.log(file)} />
+                  <FileUpload onFileSelected={handleFileSelected} />
                 </div>
+                {selectedFile && (
+                  <div className="mt-4">
+                    {uploading ? (
+                      <div className="w-full bg-gray-200 rounded-full h-2.5">
+                        <div 
+                          className="bg-[rgb(223,255,50)] h-2.5 rounded-full transition-all duration-300" 
+                          style={{ width: `${progress}%` }}
+                        ></div>
+                        <div className="text-center mt-2 text-sm text-gray-600">
+                          분석 중... {progress}%
+                        </div>
+                      </div>
+                    ) : (
+                      <Button
+                        onClick={handleStartAnalysis}
+                        className="bg-[rgb(223,255,50)] hover:bg-[rgb(203,235,30)] text-gray-900 w-full"
+                      >
+                        분석 시작
+                      </Button>
+                    )}
+                  </div>
+                )}
                 <div className="text-sm text-gray-500">
                   * 지원 형식: MP4, WebM (최대 10초)
                 </div>

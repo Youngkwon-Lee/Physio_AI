@@ -46,13 +46,13 @@ const FileUpload = ({ onFileSelected, videoPreview }: FileUploadProps) => {
   const handleFile = (file: File) => {
     // Check if the file is a video
     if (file.type.startsWith('video/')) {
+      console.log('Video file selected:', file.name, file.type, file.size);
       // Create a URL for the video
       const videoUrl = URL.createObjectURL(file);
       setVideoSrc(videoUrl);
       onFileSelected(file);
-
-      // Log file info for debugging
-      console.log('File', file);
+    } else {
+      console.error('Invalid file type:', file.type);
     }
   };
 
